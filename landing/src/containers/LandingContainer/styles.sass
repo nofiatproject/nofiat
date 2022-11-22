@@ -1,0 +1,240 @@
+@use '../././../commonStyles/variables'
+
+.landing-container
+    width: 100%
+    height: fit-content
+    overflow: hidden
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    .landing-block
+        margin: 20px 0
+
+        .title
+            text-align: center
+            font-weight: 600
+            font-size: 38px
+            line-height: 45px
+            margin-bottom: 20px
+
+        .content
+            .description
+                font-size: 27px
+                line-height: 30px
+
+            .img-wrapper
+                display: flex
+                justify-content: center
+
+                img
+                    object-fit: cover
+
+        @media (max-width: 768px)
+            .title
+                font-size: 32px
+                line-height: 38px
+
+            .content
+                .description
+                    font-size: 22px
+                    line-height: 27px
+                    text-align: center
+
+    .landing-btn
+        margin: 0 auto
+        width: 100%
+        background: none
+        border: none
+        background-image: url('../../assets/btn.png')
+        background-repeat: no-repeat
+        background-position: center
+        background-size: contain
+        font-size: 40px
+        padding: 20px
+
+        &:hover
+            box-shadow: none
+
+        @media (max-width: 768px)
+            font-size: 32px
+            padding: 15px 10px
+
+    .banner-block
+        .content
+            .img-wrapper
+                img
+                    max-width: 500px
+                    width: 100%
+
+    .header-block
+        width: 100%
+        position: relative
+        padding-bottom: 50px
+
+        &::before,
+        &:after
+            content: ''
+            position: absolute
+            top: 20%
+            background-image: url('../../assets/title_img.png')
+            background-repeat: no-repeat
+            background-position: left
+            background-size: contain
+            width: 100px
+            height: 200px
+
+            @media (max-width: 768px)
+                top: 35%
+                width: 60px
+                height: 140px
+
+        &::before
+            left: 0
+
+        &:after
+            right: 0
+            transform: scale(-1, 1)
+
+        .content
+            padding-top: 50px
+
+    .black-block
+        margin: 40px 0
+        background: variables.$black-color
+        border-radius: 30px
+        padding: 30px 70px
+        font-style: normal
+        font-family: variables.$gilroy-font
+
+        @media (max-width: 768px)
+            padding: 25px 35px
+
+    .whatIs-block
+        .content
+            .description
+                font-weight: 600
+
+            .img-wrapper
+                img
+                    max-width: 220px
+                    max-height: 280px
+
+    .howWork-block
+        .divider
+            background: variables.$white-color
+            width: 60%
+            min-width: 60%
+            text-align: center
+            margin: 24px auto
+
+        .content
+            .description
+                padding: 40px 0
+
+                p
+                    &:last-child
+                        margin: 0
+
+            .img-wrapper
+                img
+                    max-width: 160px
+                    max-height: 160px
+
+                &.banner
+                    flex-direction: column
+                    margin-top: 80px
+
+                    img
+                        width: 100%
+                        max-width: none
+                        max-height: none
+                        margin: 0 auto 80px
+
+                        &:last-child
+                            margin: 0 auto
+
+                        &.share-img
+                            width: 90%
+
+                    @media (max-width: 768px)
+                        margin-top: 40px
+
+                        img
+                            margin: 0 auto 40px
+
+    .features-block
+        .content
+            .feature-row
+                margin: 50px 0
+
+                &:first-child
+                    margin: 0 0 50px
+
+                .description
+                    font-weight: 400
+
+                &.decentralized
+                    .img-wrapper
+                        img
+                            max-width: 200px
+                            max-height: 200px
+
+                            @media (max-width: 768px)
+                                wmax-width: 160px
+                                max-height: 160px
+
+                &.teams
+                    .img-wrapper
+                        img
+                            max-width: 150px
+                            max-height: 180px
+
+                            @media (max-width: 768px)
+                                wmax-width: 120px
+                                max-height: 140px
+
+                &.dashboard
+                    .img-wrapper
+                        img
+                            max-width: 300px
+                            max-height: 300px
+
+                            @media (max-width: 768px)
+                                wmax-width: 250px
+                                max-height: 250px
+
+                &.reviews
+                    .img-wrapper
+                        img
+                            max-width: 280px
+                            max-height: 280px
+
+                            @media (max-width: 768px)
+                                max-width: 240px
+                                max-height: 240px
+
+    .btn-block
+        width: 100%
+        padding: 70px 0 200px
+        position: relative
+
+        &::after
+            content: ''
+            position: absolute
+            bottom: 0
+            right: 20%
+            width: 120px
+            height: 240px
+            background-image: url('../../assets/arrow.png')
+            background-repeat: no-repeat
+            background-position: center
+            background-size: contain
+
+            @media (max-width: 768px)
+                right: 0
+                width: 100px
+                height: 220px
+
+        .title
+            margin-bottom: 50px

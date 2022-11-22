@@ -1,0 +1,193 @@
+@use 'variables'
+
+@font-face
+  font-family: 'Gilroy'
+  font-style: normal
+  font-weight: 500
+  src: local('Gilroy Medium'), local('Gilroy-Medium'), url('../fonts/Gilroy-Medium.woff2') format('woff2'), url('../fonts/Gilroy-Medium.woff') format('woff'), url('../fonts/Gilroy-Medium.ttf') format('truetype')
+
+@font-face
+  font-family: 'Gilroy'
+  font-style: normal
+  font-weight: 600
+  src: local('Gilroy Semibold'), local('Gilroy-Semibold'), url('../fonts/Gilroy-Semibold.woff2') format('woff2'), url('../fonts/Gilroy-Semibold.woff') format('woff'), url('../fonts/Gilroy-Semibold.ttf') format('truetype')
+
+@font-face
+  font-family: 'Gilroy'
+  font-style: normal
+  font-weight: 700
+  src: local('Gilroy Heavy'), local('Gilroy-Heavy'), url('../fonts/Gilroy-Heavy.woff2') format('woff2'), url('../fonts/Gilroy-Heavy.woff') format('woff'), url('../fonts/Gilroy-Heavy.ttf') format('truetype')
+
+html
+  box-sizing: border-box
+  height: -webkit-fill-available
+
+body
+  height: 100%
+  width: 100%
+  margin: 0
+  padding: 0
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  background: variables.$grey-background-color
+
+.container
+  position: relative
+  height: 100%
+  min-height: 100vh
+  width: 100%
+  padding-bottom: 92px
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  overflow-x: hidden
+  overflow-y: scroll
+
+  &.transparent
+    background: rgba(0, 0, 0, 0)
+    padding-bottom: 0
+    overflow: hidden
+
+.modal-wrapper
+  width: 100%
+  height: 100%
+  position: fixed
+  z-index: 900
+  background: rgba(0,0,0,.3)
+  display: flex
+  justify-content: center
+  align-items: center
+
+::-webkit-scrollbar
+  width: 2px
+  height: 4px
+::-webkit-scrollbar-track
+  border-radius: 2px
+  background: variables.$black-color
+::-webkit-scrollbar-thumb
+  background: variables.$black-color
+  border-radius: 2px
+  width: 2px
+
+.ant-layout-sider,
+.ant-menu.ant-menu-dark,
+.ant-layout-sider-trigger,
+.ant-menu-dark .ant-menu-inline.ant-menu-sub
+  background: variables.$grey-background-color
+
+.ant-layout-header.site-layout-background
+  background: transparent
+  border-bottom: 1px solid transparent
+
+.ant-layout,
+.site-layout
+  background: variables.$grey-background-color
+
+.ant-layout-header
+  display: flex
+  height: 100px
+  justify-content: center
+  align-items: center
+
+.ant-layout-sider-zero-width-trigger
+  background: none
+
+.ant-back-top
+  right: 25px
+  bottom: 20px
+
+.ant-btn-default:hover
+  border-color: variables.$yellow-color
+  color: variables.$yellow-color
+
+.ant-btn-primary,
+.ant-btn-primary:hover
+  border-color: variables.$yellow-color
+  background-color: variables.$yellow-color
+
+.ant-steps
+  .ant-steps-item
+    .ant-steps-item-title
+      color: variables.$white-color !important
+      font-family: variables.$gilroy-font !important
+      font-size: 20px !important
+
+.ant-steps-item-wait .ant-steps-item-icon > .ant-steps-icon .ant-steps-icon-dot
+  background: variables.$white-color !important
+
+.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-tail::after
+  background-color: variables.$green-color
+
+.line
+  color: variables.$white-color
+  border-top: 1px solid variables.$white-color
+  opacity: .8
+
+.icon
+  display: flex
+  align-items: center
+
+  &-notifications
+    height: 100%
+    cursor: pointer
+
+.form
+  &-element
+    &__label
+      font-family: variables.$gilroy-font
+      font-style: normal
+      font-weight: 500
+      font-size: 20px
+      line-height: 25px
+      color: variables.$white-color
+
+.layout-header
+  position: fixed
+  width: 100%
+  top: 0
+  left: 0
+  z-index: 1
+  border-bottom: 1px solid variables.$grey-background-color
+
+.section-title
+  font-family: variables.$gilroy-font
+  font-size: 25px
+  line-height: 30px
+  font-weight: 700
+  color: variables.$white-color
+
+.hidden
+  display: none !important
+
+span.yellow,
+p.yellow
+  color: variables.$yellow-color
+
+@media (max-width: 992px)
+  .layout-header
+    z-index: 100
+
+  .layout-sidebar
+    top: 68px
+    z-index: 100
+    padding-top: 20px
+    background-size: 330px
+
+    &.ant-layout-sider-zero-width
+      background-image: none
+
+    .main-logo
+      display: none
+
+@media (max-width: 768px)
+  .ant-layout-header
+    padding: 0 25px
+
+  .section-title
+    font-size: 17px
+    line-height: 22px

@@ -1,0 +1,70 @@
+@use '../../commonStyles/_variables'
+
+.layout-container
+    background: url('../../assets/bg_body.png')
+    background-repeat: no-repeat
+    background-position: top right
+    background-size: 220px
+
+.main-container
+    margin-top: 68px
+    padding: 0 80px 34px
+    color: variables.$white-color
+
+    &.withBanner
+        margin-top: 123px
+
+.site-layout
+    &.visibleBgImage
+        background-image: url('../../assets/bg_menu.png')
+        background-repeat: no-repeat
+        background-position: bottom left
+        background-size: 300px
+
+.logo-absolute
+    position: absolute
+
+@media (max-width: 992px)
+    .sidebar-overlay
+        position: fixed
+        height: 100%
+        left: 0
+        top: 0
+        bottom: 0
+        right: 0
+        z-index: 99
+        background: variables.$black-color
+        opacity: .5
+
+        &.withBanner
+            top: 55px
+
+    .site-layout
+        margin-top: 68px
+
+        &.noMarginTo
+            margin-top: 0
+
+    .main-container
+        margin-top: 32px
+
+        &.withBanner
+            margin-top: 87px
+
+        &.noMarginTo
+            margin-top: 0
+
+    .layout-container
+        background-size: 110px
+
+        &.withBanner
+            background-position: 100% 55px
+
+    .logo-absolute
+        margin: 24px
+        font-size: 35px
+        line-height: 35px
+
+@media (max-width: 768px)
+    .main-container
+        padding: 0 25px 34px

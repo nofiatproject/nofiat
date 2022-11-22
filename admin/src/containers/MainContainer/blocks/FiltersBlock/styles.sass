@@ -1,0 +1,74 @@
+@use '../../../../commonStyles/_variables'
+
+.block-filters
+    padding-bottom: 20px
+
+    .dates
+        display: flex
+        justify-content: center
+
+    .timePeriod-select
+        max-width: 200px
+
+        .ant-select,
+        .ant-select:not(.ant-select-customize-input)
+            .ant-select-selector
+                background-color: variables.$yellow-color !important
+                border: 1px solid variables.$yellow-color !important
+                padding: 5px 35px 5px 20px
+
+            .ant-select-arrow
+                color: variables.$black-color
+
+            input
+                color: variables.$black-color
+
+        .ant-select-selection-item,
+        .ant-select-multiple .ant-select-selection-item,
+        .ant-select-selection-placeholder
+            color: variables.$black-color
+
+        .ant-select-single.ant-select-open
+            .ant-select-selection-item
+                color: variables.$black-color
+
+    @media (max-width: 576px)
+        .timePeriod-select
+            .ant-select,
+            .ant-select:not(.ant-select-customize-input)
+                .ant-select-selector
+                    padding: 5px 35px 5px 15px
+                    font-size: 16px
+
+                .ant-select-arrow
+                    font-size: 16px
+
+                input
+                    font-size: 16px
+
+            .ant-select-selection-item,
+            .ant-select-multiple .ant-select-selection-item,
+            .ant-select-selection-placeholder
+                font-size: 16px
+
+            .ant-select-single.ant-select-open
+                .ant-select-selection-item
+                    font-size: 16px
+
+.ant-select-dropdown.dates-select-list
+    background: none
+    box-shadow: none
+
+    .select-dropdown
+        background: variables.$grey-dark-color
+        padding: 10px 0
+        border-radius: 10px
+
+        .ant-select-item-option-active:not(.ant-select-item-option-disabled),
+        .ant-select-item-option-selected:not(.ant-select-item-option-disabled),
+        .ant-select-item .ant-select-item-option .ant-select-item-option-selected
+            background-color: transparent
+
+        .ant-select-item-option-content
+            font-family: variables.$gilroy-font
+            color: variables.$white-color

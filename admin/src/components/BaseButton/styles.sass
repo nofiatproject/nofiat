@@ -1,0 +1,57 @@
+@use '../../commonStyles/variables'
+
+.base-button
+    display: flex
+    justify-content: center
+    align-items: center
+    box-sizing: border-box
+    width: fit-content
+    background: variables.$yellow-color
+    color: variables.$black-color
+    border: 1px solid variables.$yellow-color
+    font-family: variables.$gilroy-font
+    font-style: normal
+    font-weight: 600
+    line-height: 30px
+    border-radius: 10px
+    cursor: pointer
+    transition: all .4s ease
+
+    &:hover
+        -webkit-box-shadow: 0px 0px 4px 2px variables.$yellow-color
+        box-shadow: 0px 0px 4px 2px variables.$yellow-color
+
+    &__icon
+        margin-left: 5px
+
+    &.disabled
+        opacity: .4
+        pointer-events: none
+
+        &:hover
+            -webkit-box-shadow: none
+            box-shadow: none
+
+    &.transparentButton
+        background: transparent
+        border-color: variables.$white-color
+
+        &:hover
+            -webkit-box-shadow: 0px 0px 4px 2px variables.$white-color
+            box-shadow: 0px 0px 4px 2px variables.$white-color
+
+    &.redButton
+        background: variables.$red-color
+        border-color: variables.$red-color
+
+        &:hover
+            -webkit-box-shadow: 0px 0px 4px 2px variables.$red-color
+            box-shadow: 0px 0px 4px 2px variables.$red-color
+
+    &.blackButton
+        background: variables.$black-color
+        border-color: variables.$black-color
+
+        &:hover
+            -webkit-box-shadow: 0px 0px 4px 2px variables.$black-color
+            box-shadow: 0px 0px 4px 2px variables.$black-color
