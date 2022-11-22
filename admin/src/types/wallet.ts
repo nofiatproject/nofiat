@@ -51,7 +51,7 @@ export interface IBlockchain {
 
 export interface IWalletState {
   address: string;
-  name: string;
+  // name: string;
   chainName: string;
   nativeCurrency: {
     symbol: string;
@@ -87,7 +87,7 @@ export interface IWalletMethods {
   // user
   getWalletUserData: () => Promise<IWalletInitData>; // !
   checkIfOwner: () => Promise<boolean>;
-  checkIfTipReciever: () => Promise<ITipRecieverObj | boolean>;
+  checkIfTipReciever: (address?: string) => Promise<ITipRecieverObj | boolean>;
   checkIsTeamMember: (address?: string) => Promise<IEmployeeInTeam>;
   getBalance: () => Promise<number>;
 

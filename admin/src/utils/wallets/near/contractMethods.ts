@@ -12,6 +12,13 @@ window.Buffer = Buffer;
 
 const { connect, utils, WalletConnection, Contract } = nearAPI;
 
+const getLocalStorageKey = () => localStorage.getItem("null_wallet_auth_key");
+
+const getAppKeyPrefix = () =>
+  new Promise((resolve) => {
+    setTimeout(() => resolve(getLocalStorageKey()), 500);
+  });
+
 export const getNearUserWallet = async (
   methods: IWalletMethods
 ): Promise<IWalletInitData> => {
@@ -19,9 +26,15 @@ export const getNearUserWallet = async (
     const walletConf = contextValue.currentWalletConf;
     if (walletConf.connectionConfig) {
       const nearConnection = await connect(walletConf.connectionConfig);
-      const walletConnection = new WalletConnection(nearConnection, null);
+      const walletConnection = new WalletConnection(
+        nearConnection,
+        null //walletConf.address
+      );
+      const isSignedIn = await walletConnection.isSignedInAsync();
+      // const appKeyPrefix = getLocalStorageKey() || (await getAppKeyPrefix());
 
-      if (walletConnection.isSignedIn()) {
+      if (isSignedIn) {
+        // appKeyPrefix ||
         const walletAccountId = walletConnection.getAccountId();
         return { userAddress: walletAccountId };
       } else {
@@ -48,7 +61,7 @@ export const getNearContractData = async (methods: IWalletMethods) => {
       const walletConnection = new WalletConnection(nearConnection, null);
       const contract = new Contract(
         walletConnection.account(), // the account object that is connecting
-        walletConf.name, // contextValue.currentWalletConf.address,
+        walletConf.address, // contextValue.currentWalletConf.address,
         {
           // name of contract you're connecting to
           viewMethods: [
